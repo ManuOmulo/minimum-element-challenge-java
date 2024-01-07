@@ -3,7 +3,10 @@ import java.util.Scanner;
 
 public class Main {
   public static void main(String[] args) {
-    System.out.println(Arrays.toString(readIntegers()));
+    int[] arr = readIntegers();
+    System.out.println(Arrays.toString(arr));
+    int minValue = findMin(arr);
+    System.out.println("min value in array is: " + minValue);
   }
 
   public static int[] readIntegers() {
@@ -18,5 +21,17 @@ public class Main {
     }
 
     return newIntArray;
+  }
+
+  public static int findMin(int[] array) {
+    int min = array[0];
+
+    for (int number : array) {
+      if (number < min) {
+        min = number;
+      }
+    }
+
+    return min;
   }
 }
